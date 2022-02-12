@@ -1,0 +1,17 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+$border-radius-root: 2px;
+
+// Rounded
+$rounded: (
+  0: 0,
+  'sm': $border-radius-root,
+  null: $border-radius-root * 2,
+  'lg': $border-radius-root * 3,
+  'xl': $border-radius-root * 4,
+  'pill': 9999px,
+  'circle': 50%,
+);

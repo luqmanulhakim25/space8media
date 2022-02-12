@@ -1,0 +1,50 @@
+.pointer {
+  cursor: pointer;
+}
+
+.img--grayscale {
+  filter: grayscale(1);
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.contain {
+  object-fit: contain;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.pre-line {
+  white-space: pre-line;
+}
+
+.border-thin {
+  border: 1px solid var(--v-dark-lighten4);
+}
+
+// Container
+.container {
+  @media (min-width: 1264px) {
+    max-width: 1240px;
+  }
+
+  @media (min-width: 1904px) {
+    max-width: 1240px !important;
+  }
+}
