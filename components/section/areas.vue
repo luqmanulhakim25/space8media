@@ -1,6 +1,7 @@
 <template>
   <div
-    class="area__section justify-center align-center d-flex flex-column pb-16"
+    class="areas__section justify-center align-center d-flex flex-column pb-16"
+    v-scroll-spy
   >
     <icon
       icon="mdi-map-marker"
@@ -13,9 +14,9 @@
     </h2>
 
     <p class="primary--text text--lighten-1 text--large text-center mb-10">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been <br />
-      the industry's standard dummy text ever since the 1500s,
+      Produk kami tersebar luas dan menawarkan pengalaman beriklan dengan
+      berbagai landmark terkenal di Indonesia, seperti Jakarta, Bandung hingga
+      Medan. Jadi, kamu dapat memasang iklan dimana saja
     </p>
 
     <client-only>
@@ -38,6 +39,12 @@
 <script>
 export default {
   data: () => ({
+    slides: [
+      {
+        title: 'Slide #1',
+        content: 'Slide content.',
+      },
+    ],
     options: {
       loop: true,
       perPage: 5,
@@ -64,8 +71,6 @@ export default {
   background: url('/bg-area.png');
   background-size: cover;
   background-repeat: no-repeat;
-  .VueCarousel-slide {
-  }
 
   &__slider {
     img {

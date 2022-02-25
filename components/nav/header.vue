@@ -1,24 +1,26 @@
 <template>
-  <div>
+  <div class="navbar">
     <v-app-bar
       height="82"
       fixed
       :color="top ? 'transparent' : 'white'"
-      elevation="3"
+      :elevation="top ? 0 : 4"
     >
       <div class="d-flex align-center container">
         <div>
           <v-img max-width="150" :src="isLogo" />
         </div>
-        <!-- src="https://sis-dev-public.s3.amazonaws.com/s8-1644068016266.png" -->
         <v-spacer></v-spacer>
         <div
           v-for="(item, index) in items.menu"
           :key="index"
           class="px-8 py-5 hidden-sm-and-down"
+          v-scroll-spy-link
+          v-scroll-spy-active="{ class: 'navbar__items--active' }"
         >
           <span
-            class="h6--xsmall pointer"
+            @click="goTo(item.key)"
+            class="h6--xsmall pointer navbar__items"
             v-bind:class="{ 'white--text': top, 'dark--text': !top }"
           >
             {{ item.label }}
@@ -34,14 +36,14 @@ export default {
   data: () => ({
     header_color: '',
     top: true,
-
     items: {
       menu: [
-        { id: 1, label: 'Home' },
-        { id: 2, label: 'Area' },
-        { id: 3, label: 'Products' },
-        { id: 4, label: 'Why us' },
-        { id: 5, label: 'Partners' },
+        { label: 'Home', key: 'hero__section' },
+        { label: 'Clients', key: 'clients__section' },
+        { label: 'Areas', key: 'areas__section' },
+        { label: 'Products', key: 'products__section' },
+        { label: 'Why Us', key: 'why-us__section' },
+        { label: 'Partners', key: 'partners__section' },
       ],
     },
   }),
@@ -66,7 +68,27 @@ export default {
       } else {
         this.top = true
       }
+      // console.log(window.onscroll)
+    },
+
+    goTo(key, index) {
+      let options = {
+        offset: 100,
+      }
+      this.$vuetify.goTo(`.${key}`, options)
+      // this.state.isActiveTab = index
     },
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.navbar {
+  &__items {
+    &--active {
+      border-bottom: 4px solid var(--v-primary-base);
+      color: var(--v-primary-base);
+    }
+  }
+}
+</style>

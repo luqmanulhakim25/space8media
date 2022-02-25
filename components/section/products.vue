@@ -1,6 +1,7 @@
 <template>
   <div
-    class="area__section justify-center align-center d-flex flex-column pb-16"
+    class="products__section justify-center align-center d-flex flex-column pb-16"
+    v-scroll-spy
   >
     <icon icon="mdi-cog" color="accent" iconColor="white" class="mb-4" />
     <h2 class="h2--xlarge primary--text text--darken-1 text-center mb-4">
@@ -13,21 +14,21 @@
       industry's standard dummy text ever since the 1500s,
     </p>
 
-    <v-row>
+    <v-row class="pointer hidden-sm-and-down">
       <v-col
         cols="12"
         md="3"
+        xl="2"
         v-for="(item, index) in items"
         :key="index"
-        class="pointer"
       >
-        <v-hover v-slot="{ hover }">
+        <!-- <v-hover v-slot="{ hover }">
           <v-card :class="{ 'on-hover': hover }">
             <v-img :src="item.img">
               <v-container class="fill-height fluid transparent">
                 <v-row justify="center" align="center">
                   <v-col cols="12">
-                    <!-- <div
+                    <div
                       class="white text-center align-self-center py-2 px-6 d-inline-block"
                     >
                       <p
@@ -36,84 +37,47 @@
                       >
                         {{ item.label }}
                       </p>
-                    </div> -->
+                    </div>
                   </v-col>
                 </v-row>
               </v-container>
             </v-img>
           </v-card>
-        </v-hover>
+        </v-hover> -->
+
+        <vs-card type="2">
+          <template #title>
+            <h3>Pot with a plant</h3>
+          </template>
+          <template #img>
+            <img :src="item.img" alt="" />
+          </template>
+          <template #text>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          </template>
+          <!-- <template #interactions>
+                    <vs-button danger icon>
+                      <i class="bx bx-heart"></i>
+                    </vs-button>
+                    <vs-button class="btn-chat" shadow primary>
+                      <i class="bx bx-chat"></i>
+                      <span class="span"> 54 </span>
+                    </vs-button>
+                  </template> -->
+        </vs-card>
       </v-col>
     </v-row>
+
+    <mobile-products :items="items" class="hidden-sm-and-up" />
   </div>
 </template>
 
 <script>
+import { ITEMS } from '@/data/products'
 export default {
   data: () => ({
+    items: ITEMS,
     transparent: 'rgba(255, 255, 255, 0)',
-    items: [
-      {
-        id: 1,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/SCBD-LOT-4-Sudirman-Jakarta_S.webp',
-        label: 'Billboard',
-      },
-      {
-        id: 2,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/SCBD-LOT-9-Sudirman-Jakarta_S.webp',
-        label: 'Unggul unggul',
-      },
-      {
-        id: 3,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/SCBD-LOT-23-Sudirman-Jakarta_S.webp',
-        label: 'Megathron',
-      },
-      {
-        id: 4,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/Iconic-OOH-Soekarno-Hatta-Airport-Tangerang_BARU_S.webp',
-        label: 'Billboard',
-      },
-      {
-        id: 5,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2022/01/Sudirman-Bandung.webp',
-        label: 'Billboard',
-      },
-      {
-        id: 6,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/Tol-Karang-Tengah-Rest-Area-Tangerang_S.webp',
-        label: 'Billboard',
-      },
-      {
-        id: 7,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/Hang-Tuah-Kebayoran-Baru-Jakarta_S.webp',
-        label: 'Billboard',
-      },
-      {
-        id: 8,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2022/01/Pillar-Senayan-Ajaib.webp',
-        label: 'Billboard',
-      },
-      {
-        id: 9,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/Pluit-Interchange-Tol-Sedyatmo-Jakarta_S.webp',
-        label: 'Billboard',
-      },
-      {
-        id: 10,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/Taman-Sari-Cikapayang-Bandung_S.webp',
-        label: 'Billboard',
-      },
-      {
-        id: 11,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/Terminal-1-Soekarno-Hatta-Airport-Tangerang_S.webp',
-        label: 'Billboard',
-      },
-      {
-        id: 12,
-        img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/Tol-JLC-Jakarta-Serpong-Bintaro-Jakarta_S.webp',
-        label: 'Billboard',
-      },
-    ],
   }),
 }
 </script>

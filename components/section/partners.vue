@@ -26,7 +26,7 @@
           </div>
         </v-col>
         <v-col
-          class="pa-6"
+          class="pa-6 hidden-sm-and-down"
           v-bind:class="{
             'partners__section__card__border--bottom': index < 4,
             'partners__section__card__border--right':
@@ -34,12 +34,17 @@
           }"
           cols="12"
           md="3"
-          v-for="(item, index) in logo"
+          v-for="(item, index) in items"
           :key="index"
         >
           <div class="d-flex align-center justify-center">
             <img :src="item.img" alt="logo" />
           </div>
+        </v-col>
+
+        <!-- Mobile -->
+        <v-col cols="12">
+          <mobile-partners :items="items" class="hidden-sm-and-up" />
         </v-col>
       </v-row>
     </v-container>
@@ -47,18 +52,10 @@
 </template>
 
 <script>
+import { ITEMS } from '@/data/partners'
 export default {
   data: () => ({
-    logo: [
-      { id: 1, img: './clients/client-1.svg' },
-      { id: 2, img: './clients/client-2.svg' },
-      { id: 3, img: './clients/client-3.svg' },
-      { id: 4, img: './clients/client-4.svg' },
-      { id: 5, img: './clients/client-1.svg' },
-      { id: 6, img: './clients/client-2.svg' },
-      { id: 7, img: './clients/client-3.svg' },
-      { id: 8, img: './clients/client-4.svg' },
-    ],
+    items: ITEMS,
   }),
 }
 </script>

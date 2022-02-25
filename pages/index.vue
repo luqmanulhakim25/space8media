@@ -1,7 +1,8 @@
 <template>
   <div>
     <section-hero />
-    <section-client />
+    <section-carousel />
+    <section-clients />
     <section-areas />
     <section-products />
     <section-why-us />

@@ -1,6 +1,6 @@
 <template>
-  <div class="why-us__section mx-auto">
-    <v-card flat class="why-us__section__container">
+  <div class="why-us__section mx-auto" v-scroll-spy>
+    <v-card flat class="why-us__section__container hidden-sm-and-down">
       <v-container fill-height fluid>
         <v-row align="center" justify="center">
           <v-col cols="12">
@@ -77,6 +77,9 @@
         </v-row>
       </v-container>
     </v-card>
+
+    <!-- Mobile -->
+    <mobile-why-us />
   </div>
 </template>
 
@@ -97,6 +100,8 @@
     @media (min-width: 1264px) and (max-width: 1904px) {
       height: 120vh;
       margin: 0 auto;
+    }
+    @media (max-width: 600px) {
     }
   }
 }

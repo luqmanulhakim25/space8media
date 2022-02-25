@@ -1,3 +1,7 @@
+* {
+  font-family: 'Titillium Web', sans-serif;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -47,4 +51,14 @@
   @media (min-width: 1904px) {
     max-width: 1240px !important;
   }
+}
+
+.v-window__prev,
+.v-window__next {
+  background-color: #fff002;
+}
+
+.v-btn--icon.v-size--default .v-icon,
+.v-btn--fab.v-size--default .v-icon {
+  color: black;
 }

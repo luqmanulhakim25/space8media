@@ -1,6 +1,9 @@
 require('dotenv').config()
 
 module.exports = {
+  server: {
+    host: '0',
+  },
   ssr: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -15,15 +18,40 @@ module.exports = {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['assets/scss/font.scss', './assets/scss/app.scss'],
+  css: [
+    'assets/scss/font.scss',
+    './assets/scss/app.scss',
+    'vuesax/dist/vuesax.css',
+    'boxicons/css/boxicons.min.css',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '@/plugins/scrollspy', ssr: false },
     { src: '~/plugins/slick.js', ssr: false },
+    { src: '~/plugins/vuesax.js', mode: false },
     { src: './plugins/vue-carousel.js', mode: 'client' },
   ],
 
@@ -71,7 +99,7 @@ module.exports = {
             base: '#797AB1',
           },
           secondary: {
-            base: '#FE6079',
+            base: '#FDF103',
           },
           info: process.env.lighten1,
           warning: {
