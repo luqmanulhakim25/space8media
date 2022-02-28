@@ -1,19 +1,17 @@
 <template>
-  <div class="clients__section" v-scroll-spy>
-    <v-container class="pa-0 hidden-sm-and-down" grid-list-lg>
-      <h2 class="text-center h2--xlarge primary--text text--lighten-1 mb-16">
+  <div class="clients__section">
+    <v-container class="pa-0 px-4" grid-list-lg>
+      <h2 class="text-center h2--xlarge primary--text text--lighten-1 mb-8">
         Trusted by Over100k+ Client
       </h2>
-      <v-row align="center" justify="space-between" no-gutters>
-        <v-col cols="12" md="2" v-for="(item, i) in items" :key="i">
+      <v-row align="center" justify="space-around" no-gutters>
+        <v-col cols="auto" v-for="(item, i) in items" :key="i">
           <div class="mx-auto d-flex align-center justify-center">
-            <img :src="item" alt="logo" />
+            <v-img :width="isMobile" :src="item" alt="logo" />
           </div>
         </v-col>
       </v-row>
     </v-container>
-
-    <mobile-clients class="hidden-sm-and-up" :items="items" />
   </div>
 </template>
 
@@ -23,6 +21,12 @@ export default {
   data: () => ({
     items: ITEMS,
   }),
+
+  computed: {
+    isMobile() {
+      return this.$vuetify.breakpoint.xsOnly ? 100 : 180
+    },
+  },
 }
 </script>
 

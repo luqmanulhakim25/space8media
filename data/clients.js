@@ -1,7 +1,12 @@
 export const ITEMS = [
-  './clients/client-1.svg',
-  './clients/client-2.svg',
-  './clients/client-3.svg',
-  './clients/client-4.svg',
-  './clients/client-5.svg',
+  './clients/indosat.png',
+  './clients/telkomsel.png',
+  './clients/bri.png',
+  './clients/sisesa.png',
+  './clients/gojek.png',
+  './clients/btn.png',
+  './clients/amartha.png',
+  './clients/three.png',
+  './clients/south-pole.png',
+  './clients/hakon.png',
 ]

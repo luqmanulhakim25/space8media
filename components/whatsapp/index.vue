@@ -13,7 +13,7 @@
 export default {
   methods: {
     onWhatsapp() {
-      window.open('https://api.whatsapp.com/send?phone=+62811151588')
+      window.open('https://api.whatsapp.com/send?phone=+628111515888')
     },
   },
 }

@@ -12,6 +12,7 @@ $rounded: (
   null: $border-radius-root * 2,
   'lg': $border-radius-root * 3,
   'xl': $border-radius-root * 4,
+  'xxl': $border-radius-root * 8,
   'pill': 9999px,
   'circle': 50%,
 );

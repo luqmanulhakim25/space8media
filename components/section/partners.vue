@@ -17,7 +17,7 @@
             </h2>
 
             <p
-              class="primary--text text--lighten-1 text--large text-center mb-16"
+              class="primary--text text--lighten-1 text--large text-center mb-md-16 px-4"
             >
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has <br />
@@ -34,18 +34,27 @@
           }"
           cols="12"
           md="3"
+          sm="3"
           v-for="(item, index) in items"
           :key="index"
         >
           <div class="d-flex align-center justify-center">
-            <img :src="item.img" alt="logo" />
+            <v-img max-width="150" :src="item.img" alt="logo" />
           </div>
         </v-col>
+      </v-row>
 
+      <v-row align="center" justify="center">
         <!-- Mobile -->
-        <v-col cols="12">
-          <mobile-partners :items="items" class="hidden-sm-and-up" />
+        <v-col
+          cols="auto"
+          v-for="(item, index) in items"
+          :key="index"
+          class="hidden-md-and-up"
+        >
+          <v-img max-width="150" :src="item.img" alt="logo" />
         </v-col>
+        <!-- END MOBILE -->
       </v-row>
     </v-container>
   </div>
@@ -65,6 +74,9 @@ export default {
   background: url('/bg-partner.png');
   background-size: cover;
   padding-bottom: 100px;
+  @media (max-width: 960px) {
+    padding-bottom: 50px;
+  }
 
   &__card {
     &__border--right {

@@ -1,7 +1,6 @@
 <template>
   <div>
     <section-hero />
-    <section-carousel />
     <section-clients />
     <section-areas />
     <section-products />

@@ -1,5 +1,5 @@
 <template>
-  <div class="mouse_scroll">
+  <div class="mouse_scroll pointer" @click="onEmitGoTo()">
     <div class="mouse">
       <div class="wheel"></div>
     </div>
@@ -10,6 +10,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    onEmitGoTo() {
+      this.$emit('on:goTo')
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .mouse_scroll {

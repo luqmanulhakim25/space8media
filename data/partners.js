@@ -1,10 +1,10 @@
 export const ITEMS = [
-  { id: 1, img: './clients/client-1.svg' },
-  { id: 2, img: './clients/client-2.svg' },
-  { id: 3, img: './clients/client-3.svg' },
-  { id: 4, img: './clients/client-4.svg' },
-  { id: 5, img: './clients/client-1.svg' },
-  { id: 6, img: './clients/client-2.svg' },
-  { id: 7, img: './clients/client-3.svg' },
-  { id: 8, img: './clients/client-4.svg' },
+  { id: 1, img: './partners/eye.png' },
+  { id: 2, img: './partners/macro-ad.png' },
+  { id: 3, img: './partners/via-eight.png' },
+  { id: 4, img: './partners/micro-ad.png' },
+  { id: 5, img: './partners/iprospect.png' },
+  { id: 6, img: './partners/mahaka.png' },
+  { id: 7, img: './partners/group-m.png' },
+  { id: 8, img: './partners/kly.png' },
 ]

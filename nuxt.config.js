@@ -34,9 +34,15 @@ module.exports = {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
       },
     ],
+  },
+
+  generate: {
+    minify: {
+      collapseWhitespace: false,
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -49,9 +55,7 @@ module.exports = {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/scrollspy', ssr: false },
-    { src: '~/plugins/slick.js', ssr: false },
-    { src: '~/plugins/vuesax.js', mode: false },
+    { src: '~/plugins/vuesax.js', mode: 'client' },
     { src: './plugins/vue-carousel.js', mode: 'client' },
   ],
 
@@ -88,6 +92,7 @@ module.exports = {
           primary: {
             base: '#20246E',
             lighten1: '#B3B4D0',
+            lighten2: '#0C8FEA',
             darken1: '#41436A',
             darken2: '#2C336A',
           },
@@ -101,12 +106,12 @@ module.exports = {
           secondary: {
             base: '#FDF103',
           },
-          info: process.env.lighten1,
+          info: '#3FAACD',
           warning: {
             lighten1: '#FED877',
           },
-          error: process.env.accent4,
-          success: process.env.accent3,
+          error: '#FD4A5B',
+          success: '#FD4A5B',
         },
       },
     },

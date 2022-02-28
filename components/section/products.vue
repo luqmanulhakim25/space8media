@@ -1,82 +1,76 @@
 <template>
   <div
     class="products__section justify-center align-center d-flex flex-column pb-16"
-    v-scroll-spy
   >
     <icon icon="mdi-cog" color="accent" iconColor="white" class="mb-4" />
     <h2 class="h2--xlarge primary--text text--darken-1 text-center mb-4">
       Our Products
     </h2>
 
-    <p class="primary--text text--lighten-1 text--large text-center mb-10">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the <br />
-      industry's standard dummy text ever since the 1500s,
-    </p>
+    <v-responsive width="800">
+      <p
+        class="primary--text text--lighten-1 text--large text-center mb-10 px-4"
+      >
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s,
+      </p>
+    </v-responsive>
 
-    <v-row class="pointer hidden-sm-and-down">
+    <v-row class="pointer hidden-xs-only">
       <v-col
         cols="12"
         md="3"
         xl="2"
+        sm="4"
         v-for="(item, index) in items"
         :key="index"
       >
-        <!-- <v-hover v-slot="{ hover }">
-          <v-card :class="{ 'on-hover': hover }">
-            <v-img :src="item.img">
-              <v-container class="fill-height fluid transparent">
-                <v-row justify="center" align="center">
-                  <v-col cols="12">
-                    <div
-                      class="white text-center align-self-center py-2 px-6 d-inline-block"
-                    >
-                      <p
-                        class="h4--default black--text"
-                        v-bind:class="{ 'd-none': !hover }"
-                      >
-                        {{ item.label }}
-                      </p>
-                    </div>
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-img>
-          </v-card>
-        </v-hover> -->
-
         <vs-card type="2">
           <template #title>
-            <h3>Pot with a plant</h3>
+            <h3 class="h4--default">{{ item.label }}</h3>
           </template>
           <template #img>
-            <img :src="item.img" alt="" />
+            <v-img width="100%" :src="item.img" alt="" />
           </template>
+          <!-- <template #text>
+            <v-card flat class="py-2 px-4">
+            </v-card>
+          </template> -->
           <template #text>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <p class="text--default">
+              Jl. Raya Parung (Setelah Warung Sate Solo Tiga Saudara) – Depok
+            </p>
           </template>
-          <!-- <template #interactions>
-                    <vs-button danger icon>
-                      <i class="bx bx-heart"></i>
-                    </vs-button>
-                    <vs-button class="btn-chat" shadow primary>
-                      <i class="bx bx-chat"></i>
-                      <span class="span"> 54 </span>
-                    </vs-button>
-                  </template> -->
+          <template #interactions>
+            <!-- <vs-button danger icon>
+              <i class="bx bx-heart"></i>
+            </vs-button> -->
+            <!-- <vs-button class="btn-chat" shadow primary>
+              <v-icon>mdi-eye</v-icon>
+              <span class="span"> Billboard </span>
+            </vs-button> -->
+          </template>
         </vs-card>
       </v-col>
     </v-row>
 
-    <mobile-products :items="items" class="hidden-sm-and-up" />
+    <!-- MOBILE -->
+    <mobile-products
+      class="hidden-sm-and-up"
+      v-for="(item, index) in items"
+      :key="index"
+      :item="item"
+    />
+    <!-- END MOBILE -->
   </div>
 </template>
 
 <script>
-import { ITEMS } from '@/data/products'
+import { PRODUCTS } from '@/data/products'
 export default {
   data: () => ({
-    items: ITEMS,
+    items: PRODUCTS,
     transparent: 'rgba(255, 255, 255, 0)',
   }),
 }
@@ -87,15 +81,19 @@ export default {
   padding: 0px !important;
 }
 
-.v-card {
-  transition: opacity 1s, transform 0.5s ease-in-out;
-  transform: scale(1.05);
-  z-index: 1;
+::v-deep .vs-card__img {
+  border-radius: 0px !important;
+  &:hover {
+    opacity: 1;
+  }
 }
 
-.v-card:not(.on-hover) {
-  opacity: 0.8;
-  transform: scale(1);
-  z-index: 0;
+::v-deep .vs-card {
+  border-radius: 0px !important;
+  background: none !important;
+}
+
+::v-deep .vs-card-content.type-2 .vs-card__text {
+  padding-top: 100px;
 }
 </style>

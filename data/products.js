@@ -1,4 +1,4 @@
-export const ITEMS = [
+export const PRODUCTS = [
   {
     id: 1,
     img: 'https://eyeindonesia.com/eyeadvertising/wp-content/uploads/2019/06/SCBD-LOT-4-Sudirman-Jakarta_S.webp',

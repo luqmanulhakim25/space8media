@@ -1,5 +1,5 @@
 * {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .pointer {
@@ -53,12 +53,30 @@
   }
 }
 
-.v-window__prev,
-.v-window__next {
-  background-color: #fff002;
+.VueCarousel-dot {
+  transition: all 0.25s ease;
+  &-container {
+    margin-top: -50px !important;
+  }
+
+  &--active {
+    width: 40px !important;
+    height: 10px !important;
+    border-radius: 20px !important;
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none !important;
+  }
 }
 
-.v-btn--icon.v-size--default .v-icon,
-.v-btn--fab.v-size--default .v-icon {
-  color: black;
-}
+// .v-window__prev,
+// .v-window__next {
+// background-color: #fff002;
+// }
+
+// .v-btn--icon.v-size--default .v-icon,
+// .v-btn--fab.v-size--default .v-icon {
+// color: black;
+// }
