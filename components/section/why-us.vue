@@ -1,6 +1,5 @@
 <template>
   <div class="why-us__section mx-auto">
-    <!-- hidden-sm-and-down -->
     <v-card flat class="why-us__section__container">
       <v-container fill-height fluid>
         <v-row align="center" justify="center">
@@ -32,7 +31,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="5" sm="5" class="pb-16">
-            <v-img src="/why-us-billboard.png" />
+            <v-img src="/images/why-us/why-us-billboard.png" />
           </v-col>
           <v-col cols="12" md="6" class="pb-16">
             <v-container>
@@ -71,9 +70,6 @@
         </v-row>
       </v-container>
     </v-card>
-
-    <!-- Mobile -->
-    <!-- <mobile-why-us :items="items" /> -->
   </div>
 </template>
 
@@ -88,24 +84,28 @@ export default {
 
 <style lang="scss" scoped>
 .why-us__section {
-  background: url('/bg-why-us.png');
+  background: url('/images/why-us/bg-why-us.png');
   background-size: cover;
   height: auto;
 
   &__container {
-    background-image: url('/why-us-card.png');
+    background-image: url('/images/why-us/why-us-card.png');
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 100px;
     @media (min-width: 1904px) {
       height: 150vh;
+      padding-top: 0px;
     }
     @media (min-width: 1264px) and (max-width: 1904px) {
       height: auto;
       margin: 0 auto;
+      background-size: 100% 100%;
+      padding-bottom: 80px;
     }
     @media (min-width: 200px) and (max-width: 960px) {
-      background-image: url('/bg_mobile-why-us.png');
+      padding-top: 40px;
+      background-image: url('/images/why-us/bg_mobile-why-us.png');
     }
   }
 

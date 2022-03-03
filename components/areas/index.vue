@@ -1,11 +1,9 @@
 <template>
-  <div
-    class="areas__section justify-center align-center d-flex flex-column pb-16"
-  >
+  <div class="area__section hidden-sm-and-up py-16">
     <icon
       color="primary lighten-1"
       iconColor="white"
-      class="mb-4"
+      class="mb-4 d-flex align-center justify-center mx-auto"
       icon="mdi-map-marker-outline"
     />
     <h2 class="h2--xlarge primary--text text--darken-1 text-center mb-4">
@@ -22,16 +20,16 @@
     </v-responsive>
     <v-responsive>
       <client-only>
-        <carousel v-bind="options" :perPage="isPerPage">
+        <carousel v-bind="options">
           <slide
             v-for="(item, index) in items"
             :key="index"
-            class="areas__section__slider"
+            class="area__section__slider"
           >
             <img :src="item.image" class="pointer" @click="onDetail(item)" />
             <v-card
               flat
-              class="areas__section__slider__label d-inline-block px-4"
+              class="area__section__slider__label d-inline-block px-4"
             >
               <p class="h7--xxsmall primary--text">
                 {{ item.label }}
@@ -50,22 +48,15 @@ export default {
   data: () => ({
     options: {
       loop: true,
+      perPage: 1,
       autoplay: true,
       autoplayTimeout: 5000,
       paginationColor: '#E1E1E1',
       paginationActiveColor: '#20246E',
-      touchDrag: true,
       mouseDrag: true,
-      centerMode: true,
     },
     items: AREAS,
   }),
-
-  computed: {
-    isPerPage() {
-      return this.$vuetify.breakpoint.xsOnly ? 1 : 5
-    },
-  },
 
   methods: {
     onDetail(item) {
@@ -76,8 +67,8 @@ export default {
 </script>
 
 <style lang="scss">
-.areas__section {
-  background: url('/images/areas/bg_area.png');
+.area__section {
+  background: url('/bg-area.png');
   background-size: cover;
   background-repeat: no-repeat;
 

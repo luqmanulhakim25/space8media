@@ -75,7 +75,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .areas__section {
   background: url('/images/areas/bg_area.png');
   background-size: cover;

@@ -35,7 +35,8 @@
               'dark--text': !state.isTop && state.isActiveSlug !== item.slug,
               'secondary--text':
                 state.isActiveSlug === item.slug && state.isTop,
-              'primary--text': state.isActiveSlug === item.slug && !state.isTop,
+              'primary--text text--darken-3':
+                state.isActiveSlug === item.slug && !state.isTop,
             }"
           >
             {{ item.label }}
@@ -44,22 +45,23 @@
         <v-icon
           size="26"
           :color="state.isTop ? 'white' : 'dark'"
-          class="pointer hidden-xs-only mt-1"
+          class="pointer hidden-xs-only"
           @click="onInstagram()"
           >mdi-instagram</v-icon
         >
-        <v-btn
-          depressed
-          outlined
+        <v-icon
+          class="hidden-sm-and-up"
+          size="38"
           @click.stop="state.isDrawer = !state.isDrawer"
-          class="rounded-xl hidden-sm-and-up"
-          :color="state.isTop ? 'white' : 'dark'"
+          :color="state.isTop ? 'white' : 'primary'"
+          >{{
+            state.isDrawer
+              ? 'mdi-close-circle'
+              : 'mdi-microsoft-xbox-controller-menu'
+          }}</v-icon
         >
-          <v-icon>mdi-menu</v-icon>
-        </v-btn>
       </div>
     </v-app-bar>
-
     <!-- SIDEBAR -->
     <nav-sidebar :state="state" />
     <!-- END SIDEBAR -->
@@ -88,8 +90,8 @@ export default {
 
   computed: {
     isLogo() {
-      if (this.state.isTop) return '/nav-logo-white.png'
-      if (!this.state.isTop) return '/nav-logo-dark.png'
+      if (this.state.isTop) return '/images/nav-logo-white.png'
+      if (!this.state.isTop) return '/images/nav-logo-dark.png'
     },
   },
 
@@ -143,7 +145,7 @@ export default {
     }
 
     &--active {
-      border-bottom: 3px solid var(--v-primary-base);
+      border-bottom: 3px solid var(--v-primary-darken3);
     }
   }
 }

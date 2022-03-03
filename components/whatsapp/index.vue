@@ -1,5 +1,5 @@
 <template>
-  <div class="whatsapp container">
+  <div class="whatsapp">
     <div
       class="whatsapp__link d-flex align-center justify-center pointer"
       @click="onWhatsapp()"
@@ -32,7 +32,6 @@ export default {
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
-    // box-shadow: 2px 2px 3px #999;
     z-index: 100;
   }
 }

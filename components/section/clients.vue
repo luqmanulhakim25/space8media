@@ -33,5 +33,8 @@ export default {
 <style lang="scss" scoped>
 .clients__section {
   padding: 100px 0px;
+  @media (max-width: 600px) {
+    padding: 80px 0px;
+  }
 }
 </style>

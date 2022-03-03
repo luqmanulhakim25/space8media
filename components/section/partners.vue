@@ -71,7 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 .partners__section {
-  background: url('/bg-partner.png');
+  background: url('/images/partners/bg-partner.png');
   background-size: cover;
   padding-bottom: 100px;
   @media (max-width: 960px) {

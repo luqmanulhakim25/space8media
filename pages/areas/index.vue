@@ -1,8 +1,7 @@
 <template>
   <div class="areas d-flex flex-column align-center">
-    <v-card flat color="primary" height="82" width="100%"></v-card>
+    <v-card flat color="primary darken-3" height="82" width="100%"></v-card>
     <!-- <v-img class="areas__header full-width" height="300" src="/hero.jpg" /> -->
-
     <v-container class="py-md-16">
       <v-row>
         <v-responsive class="container mb-n6">
@@ -13,6 +12,8 @@
             </template>
           </vs-input>
         </v-responsive>
+      </v-row>
+      <v-row v-if="isFilterAreas.length">
         <v-col
           cols="6"
           md="3"
@@ -29,6 +30,9 @@
             </div>
           </v-card>
         </v-col>
+      </v-row>
+      <v-row align="center" justify="center" class="mt-16" v-else>
+        <state-empty />
       </v-row>
     </v-container>
   </div>

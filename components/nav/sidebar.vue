@@ -4,10 +4,11 @@
     fixed
     temporary
     color="transparent"
+    class="container"
   >
     <vs-sidebar absolute open v-model="active_slug">
       <template #logo>
-        <v-img max-width="100" src="/nav-logo-dark.png" class="mr-16" />
+        <v-img max-width="100" src="images/nav-logo-dark.png" class="mr-16" />
       </template>
       <vs-sidebar-item
         :id="item.slug"
@@ -75,5 +76,13 @@ export default {
 .v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close),
 .v-navigation-drawer--temporary:not(.v-navigation-drawer--close) {
   box-shadow: none !important;
+}
+
+.vs-sidebar__item.active {
+  color: var(--v-primary-base) !important;
+}
+
+.vs-sidebar__item:after {
+  background: var(--v-primary-base) !important;
 }
 </style>

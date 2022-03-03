@@ -3,40 +3,8 @@
     class="areas__detail d-flex flex-column align-center justify-center"
     v-show="item"
   >
-    <v-card
-      flat
-      color="primary darken-3"
-      height="82"
-      width="100%"
-      style="z-index: 1"
-    />
-
-    <v-card flat color="transparent" height="200" width="100%" />
-
-    <!-- <v-container>
-      <v-row align="center" justify="center">
-        <v-col cols="12" md="8">
-          <v-card
-            class="areas__detail__card rounded-xl pa-12 d-flex flex-column justify-center align-center mt-8 mb-4"
-          >
-            <icon
-              color="primary lighten-2"
-              iconColor="white"
-              icon="mdi-map-marker-outline"
-              class="mb-4"
-            />
-
-            <h4 class="h4--default primary--text text-center">
-              {{ item.label }}
-            </h4>
-            <p class="text--default primary--text mt-2 text-center">
-              {{ item.address }}
-            </p>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container> -->
-
+    <v-card flat color="transparent" height="200" width="100%"></v-card>
+    <!-- <v-card flat color="primary darken-3" height="82" width="100%"></v-card> -->
     <v-img class="areas__detail__header full-width" />
     <v-container class="mt-16 px-6 px-md-0">
       <v-row>
@@ -44,7 +12,29 @@
           <v-img :src="item.image" class="rounded-xl elevation-2 full-height" />
         </v-col>
         <v-col cols="12" md="5">
-          <v-card flat class="rounded-xl">
+          <div class="d-flex flex-column align-center">
+            <icon
+              color="primary lighten-2"
+              iconColor="white"
+              class="mb-4"
+              icon="mdi-map-marker-outline"
+            />
+            <div
+              class="primary full-width d-flex flex-column justify-center align-center py-4 mb-4 rounded-xl"
+              style="z-index: 99"
+            >
+              <h4 style="z-index: 999" class="h4--default white--text">
+                {{ item.label }}
+              </h4>
+              <p
+                style="z-index: 999"
+                class="text--default white--text mb-6 mt-1"
+              >
+                {{ item.address }}
+              </p>
+            </div>
+          </div>
+          <v-card flat>
             <div class="primary lighten-2 py-2 px-4">
               <p class="h7--xxsmall white--text">Location</p>
             </div>
@@ -56,46 +46,6 @@
               loading="lazy"
             ></iframe>
           </v-card>
-          <div class="hidden-md-and-up">
-            <div
-              class="d-flex flex-column justify-center align-center mt-8 mb-4"
-            >
-              <icon
-                color="primary lighten-2"
-                iconColor="white"
-                icon="mdi-map-marker-outline"
-                class="mb-4"
-              />
-
-              <div class="ml-4">
-                <h4 class="h4--default primary--text text-center">
-                  {{ item.label }}
-                </h4>
-                <p class="text--default primary--text mt-2 text-center">
-                  {{ item.address }}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="hidden-sm-and-down">
-            <div class="d-flex align-start mt-4">
-              <icon
-                color="primary lighten-2"
-                iconColor="white"
-                icon="mdi-map-marker-outline"
-                size="32"
-              />
-
-              <div class="ml-4">
-                <h4 class="h4--default primary--text">
-                  {{ item.label }}
-                </h4>
-                <p class="text--default primary--text mt-2">
-                  {{ item.address }}
-                </p>
-              </div>
-            </div>
-          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -233,11 +183,10 @@ export default {
 <style lang="scss" scoped>
 .areas__detail {
   &__header {
-    background: url('/images/areas/city.jpg');
+    background: url('/city.jpg');
     background-size: cover;
-    background-position-y: -150px;
+    background-position-y: -200px;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     position: absolute;
     top: 0;
     height: 500px;
@@ -247,15 +196,10 @@ export default {
       background-color: rgba(15, 15, 43, 0.37);
       position: absolute;
       height: 100vh;
-      @media (max-width: 960px) {
+      @media (max-width: 600px) {
         height: 100vh;
       }
     }
-  }
-
-  &__card {
-    z-index: 2;
-    background-color: rgba(255, 255, 255, 0.7) !important;
   }
 }
 </style>

@@ -5,18 +5,18 @@
         <v-col cols="12">
           <v-img
             width="100"
-            src="/hero/mars.svg"
+            src="/images/hero/mars.svg"
             class="hero__section__mars bounce"
           />
         </v-col>
         <v-col cols="12">
           <v-img
             width="110"
-            src="/hero/moon.svg"
+            src="/images/hero/moon.svg"
             class="hero__section__moon bounce-moon"
           />
         </v-col>
-        <v-col cols="12" md="8">
+        <v-col cols="auto" md="8">
           <v-card
             flat
             class="hero__section__card mx-auto d-flex flex-column align-center py-8 px-md-16 px-4"
@@ -38,6 +38,9 @@
             >
               <template #icon>
                 <v-icon>mdi-magnify</v-icon>
+              </template>
+              <template #message-danger v-if="!valid">
+                Type location here
               </template>
             </vs-input>
 
@@ -67,6 +70,7 @@ import { ITEMS } from '@/data/hero'
 export default {
   data: () => ({
     search: '',
+    valid: true,
     state: {
       isActiveImage: 0,
     },
@@ -79,7 +83,13 @@ export default {
 
   methods: {
     onSearch() {
-      this.$router.push({ path: '/areas', hash: this.search })
+      if (!this.search) {
+        this.valid = false
+      }
+
+      if (this.search) {
+        this.$router.push({ path: '/areas', hash: this.search })
+      }
     },
 
     goTo() {
@@ -90,12 +100,23 @@ export default {
       this.$vuetify.goTo(target, options)
     },
   },
+
+  watch: {
+    search: {
+      handler(val) {
+        if (val) {
+          this.valid = true
+        }
+      },
+    },
+    immediate: true,
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .hero__section {
-  background: url('/hero/bg_space.svg');
+  background: url('/images/hero/bg_space.svg');
   background-color: #1d224c !important;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -103,18 +124,18 @@ export default {
   height: 100vh;
 
   @media (max-width: 960px) {
-    background-attachment: none;
+    background-attachment: unset;
     height: auto;
   }
 
   @media (max-width: 600px) {
-    background-attachment: none;
+    background-attachment: unset;
     height: 100vh;
   }
 
   &:before {
     content: '';
-    width: 100%;
+    width: auto;
     height: 100vh;
     background-color: rgba(17, 17, 31, 0.4);
     position: absolute;
@@ -152,6 +173,10 @@ export default {
   animation-duration: 10s;
   animation-iteration-count: infinite;
   transform-origin: bottom;
+  @media (min-width: 1264px) and (max-width: 1904px) {
+    position: absolute;
+    top: 300px;
+  }
 }
 
 .bounce {
