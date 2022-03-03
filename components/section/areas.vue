@@ -82,15 +82,15 @@ export default {
   background-repeat: no-repeat;
 
   &__slider {
-    width: 100%;
+    width: 100% !important;
 
     img {
-      object-fit: cover;
-      padding: 0px 10px;
-      width: 100%;
-      height: 200px;
-      transition: all 0.25s ease;
-      -webkit-transition: all 0.25s ease;
+      object-fit: cover !important;
+      padding: 0px 10px !important;
+      width: 100% !important;
+      height: 200px !important;
+      transition: all 0.25s ease !important;
+      -webkit-transition: all 0.25s ease !important;
 
       &:hover {
         -webkit-transform: scale(1.05);
