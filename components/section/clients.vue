@@ -2,7 +2,7 @@
   <div class="clients__section">
     <v-container class="pa-0 px-4" grid-list-lg>
       <h2 class="text-center h2--xlarge primary--text text--lighten-1 mb-8">
-        Trusted by Over100k+ Client
+        Trusted by Over 100k+ Client
       </h2>
       <v-row align="center" justify="space-around" no-gutters>
         <v-col cols="auto" v-for="(item, i) in items" :key="i">

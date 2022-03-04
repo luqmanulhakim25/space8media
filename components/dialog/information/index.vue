@@ -4,7 +4,7 @@
       <span class="d-flex justify-end pointer"
         ><v-icon color="dark" @click="onEmitClose()">mdi-close</v-icon></span
       >
-      <v-img width="150" class="mx-auto" src="/pdf.svg" />
+      <v-img width="150" class="mx-auto" src="/general/pdf.svg" />
 
       <vs-input v-model="form.name" block placeholder="Name" class="mt-4">
         <template #icon>
@@ -56,7 +56,9 @@ export default {
 
   methods: {
     onDownload() {
-      window.open('https://drive.google.com/file/d/1dKRW8-ZFvszPP0HDp_-gvHJSv_n1WXKa/view?usp=sharing')
+      window.open(
+        'https://drive.google.com/file/d/1dKRW8-ZFvszPP0HDp_-gvHJSv_n1WXKa/view?usp=sharing'
+      )
     },
 
     onEmitClose() {

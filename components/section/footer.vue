@@ -1,5 +1,5 @@
 <template>
-  <div class="footer__section primary darken-3 px-16">
+  <div class="footer__section primary darken-3 px-md-16 px-4">
     <div class="d-sm-flex align-center justify-space-between">
       <div>
         <v-img
@@ -21,8 +21,8 @@
           </p>
         </div>
         <div class="mt-sm-4 mt-4 mt-md-0">
-          <p class="text--default white--text">(021) 225 48589</p>
-          <p class="text--default white--text">email@spacemedia.com</p>
+          <p class="text--default white--text">0811 9263 666</p>
+          <p class="text--default white--text">marketing@space8media.com</p>
         </div>
       </div>
     </div>
@@ -30,7 +30,8 @@
     <v-divider class="mt-6 mb-8 white"></v-divider>
     <div class="d-flex align-center flex-column">
       <p class="text--large white--text text-center">
-        Copyright © 2022 Space8MEDIA, All rights reserved
+        Copyright © 2022 Space 8 Media <br />
+        All rights reserved
       </p>
       <v-icon
         size="36"

@@ -11,9 +11,9 @@
       <p
         class="primary--text text--lighten-1 text--large text-center mb-10 px-4"
       >
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s,
+        Our products are widely distributed and offer an advertising experience
+        with various famous landmarks in Indonesia, such as Jakarta, Bandung to
+        Medan. So, you can place ads anywhere
       </p>
     </v-responsive>
 

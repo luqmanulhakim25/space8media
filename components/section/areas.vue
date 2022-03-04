@@ -8,18 +8,10 @@
       class="mb-4"
       icon="mdi-map-marker-outline"
     />
-    <h2 class="h2--xlarge primary--text text--darken-1 text-center mb-4">
-      Recommended Areas
+    <h2 class="h2--xlarge primary--text text--darken-1 text-center mb-8">
+      Areas
     </h2>
-    <v-responsive width="800">
-      <p
-        class="primary--text text--lighten-1 text--large text-center mb-10 px-4"
-      >
-        Our products are widely distributed and offer an advertising experience
-        with various famous landmarks in Indonesia, such as Jakarta, Bandung to
-        Medan. So, you can place ads anywhere
-      </p>
-    </v-responsive>
+
     <v-responsive>
       <client-only>
         <carousel v-bind="options" :perPage="isPerPage">

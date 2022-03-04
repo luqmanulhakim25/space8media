@@ -103,7 +103,7 @@
       <v-row>
         <v-col
           cols="6"
-          md="3"
+          md="4"
           v-for="(item, index) in products"
           :key="index"
           class="mt-6"
@@ -150,50 +150,21 @@ export default {
         id: 1,
         icon: 'mdi-bulletin-board',
         label: 'Media Type',
-        description: 'Billboard, Frontlight, Horizontal',
+        description: 'Billboard Horizontal/Vertical, Frontlight/Backlight',
       },
-      {
-        id: 2,
-        icon: 'mdi-view-dashboard-outline',
-        label: 'Total Unit',
-        description: '1 Side',
-      },
+
       {
         id: 3,
         icon: 'mdi-eye',
         label: 'Traffic viewers per day',
         description: '90.910',
       },
-      {
-        id: 4,
-        icon: 'mdi-arrange-send-backward',
-        label: 'Media Size',
-        description: '5 x 10 Meter',
-      },
-      {
-        id: 5,
-        icon: 'mdi-binoculars',
 
-        label: 'View From',
-        description: 'Margonda Depok 2',
-      },
-      {
-        id: 6,
-        icon: 'mdi-map-marker-outline',
-        label: 'Coordinate',
-        description: '-6.938310, 109.31930',
-      },
       {
         id: 7,
         icon: 'mdi-magnify',
         label: 'Point of Interest',
-        description: 'Hotel, Minimarket, Universitas, Resto, Mall, Apartment',
-      },
-      {
-        id: 7,
-        icon: 'mdi-magnify',
-        label: 'Point of Interest',
-        description: 'Hotel, Minimarket, Universitas, Resto, Mall, Apartment',
+        description: 'Hotel, Minimarket, Universitas, Resto, Mall & Apartment',
       },
     ],
     state: {
@@ -233,7 +204,7 @@ export default {
 <style lang="scss" scoped>
 .areas__detail {
   &__header {
-    background: url('/images/areas/city.jpg');
+    background: url('https://a.cdn-hotels.com/gdcs/production2/d1963/0f6d0b5b-499c-4d1c-8995-1d2ea4f9a9a4.jpg?impolicy=fcrop&w=800&h=533&q=medium');
     background-size: cover;
     background-position-y: -150px;
     background-repeat: no-repeat;
