@@ -2,7 +2,7 @@
   <div class="areas d-flex flex-column align-center">
     <v-card flat color="primary darken-3" height="82" width="100%"></v-card>
     <!-- <v-img class="areas__header full-width" height="300" src="/hero.jpg" /> -->
-    <v-container class="py-md-16">
+    <v-container class="py-16">
       <v-row>
         <v-responsive class="container mb-n6">
           <p class="h5--small primary--text mb-4">Find Your Location</p>
@@ -24,8 +24,8 @@
           <v-card flat class="areas__card pointer" @click="onDetail(item)">
             <v-img height="180" :src="item.image" class="rounded" />
             <div class="white px-4">
-              <p class="areas__label h6--xsmall primary--text">
-                {{ item.label }}
+              <p class="areas__label h6--xsmall primary--text text-capitalize">
+                {{ item.slug }}
               </p>
             </div>
           </v-card>
@@ -50,7 +50,7 @@ export default {
     isFilterAreas() {
       const insensitive = new RegExp(this.search?.replace(/\\/g, '\\\\'), 'i')
       return this.areas.filter((item) => {
-        return item.label.match(insensitive)
+        return item.slug.match(insensitive)
       })
     },
   },

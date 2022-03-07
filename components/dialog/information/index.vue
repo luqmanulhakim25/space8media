@@ -39,6 +39,7 @@
 export default {
   props: {
     dialog: Boolean,
+    pdf: String,
   },
 
   data: () => ({
@@ -56,9 +57,7 @@ export default {
 
   methods: {
     onDownload() {
-      window.open(
-        'https://drive.google.com/file/d/1dKRW8-ZFvszPP0HDp_-gvHJSv_n1WXKa/view?usp=sharing'
-      )
+      window.open(this.pdf)
     },
 
     onEmitClose() {

@@ -1,5 +1,5 @@
 <template>
-  <div class="area__section hidden-sm-and-up py-16">
+  <div class="area__section hidden-lg-and-up py-16">
     <icon
       color="primary lighten-1"
       iconColor="white"
@@ -9,7 +9,7 @@
     <h2 class="h2--xlarge primary--text text--darken-1 text-center mb-4">
       Recommended Areas
     </h2>
-    <v-responsive width="800">
+    <v-responsive width="800" class="mx-auto">
       <p
         class="primary--text text--lighten-1 text--large text-center mb-10 px-4"
       >
@@ -20,21 +20,23 @@
     </v-responsive>
     <v-responsive>
       <client-only>
-        <carousel v-bind="options">
+        <carousel v-bind="options" :perPage="isPerPage">
           <slide
             v-for="(item, index) in items"
             :key="index"
             class="area__section__slider"
           >
-            <img :src="item.image" class="pointer" @click="onDetail(item)" />
-            <v-card
-              flat
-              class="area__section__slider__label d-inline-block px-4"
-            >
-              <p class="h7--xxsmall primary--text">
-                {{ item.label }}
-              </p>
-            </v-card>
+            <v-responsive>
+              <img :src="item.image" class="pointer" @click="onDetail(item)" />
+              <v-card
+                flat
+                class="area__section__slider__label d-inline-block px-4"
+              >
+                <p class="h7--xxsmall primary--text text-capitalize">
+                  {{ item.slug }}
+                </p>
+              </v-card>
+            </v-responsive>
           </slide>
         </carousel>
       </client-only>
@@ -48,7 +50,6 @@ export default {
   data: () => ({
     options: {
       loop: true,
-      perPage: 1,
       autoplay: true,
       autoplayTimeout: 5000,
       paginationColor: '#E1E1E1',
@@ -57,6 +58,14 @@ export default {
     },
     items: AREAS,
   }),
+
+  computed: {
+    isPerPage() {
+      if (this.$vuetify.breakpoint.xsOnly) return 2
+      if (this.$vuetify.breakpoint.sm) return 3
+      if (this.$vuetify.breakpoint.md) return 5
+    },
+  },
 
   methods: {
     onDetail(item) {

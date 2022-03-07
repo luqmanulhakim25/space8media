@@ -7,8 +7,12 @@
       iconColor="white"
       class="mb-4"
       icon="mdi-map-marker-outline"
+      data-aos="fade-up"
     />
-    <h2 class="h2--xlarge primary--text text--darken-1 text-center mb-8">
+    <h2
+      class="h2--xlarge primary--text text--darken-1 text-center mb-8"
+      data-aos="fade-up"
+    >
       Areas
     </h2>
 
@@ -19,14 +23,15 @@
             v-for="(item, index) in items"
             :key="index"
             class="areas__section__slider"
+            data-aos="fade-left"
           >
             <img :src="item.image" class="pointer" @click="onDetail(item)" />
             <v-card
               flat
               class="areas__section__slider__label d-inline-block px-4"
             >
-              <p class="h7--xxsmall primary--text">
-                {{ item.label }}
+              <p class="h7--xxsmall primary--text text-capitalize">
+                {{ item.slug }}
               </p>
             </v-card>
           </slide>
@@ -55,7 +60,7 @@ export default {
 
   computed: {
     isPerPage() {
-      return this.$vuetify.breakpoint.xsOnly ? 1 : 5
+      return this.$vuetify.breakpoint.xsOnly ? 2 : 5
     },
   },
 

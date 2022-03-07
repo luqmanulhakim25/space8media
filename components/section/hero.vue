@@ -20,6 +20,8 @@
           <v-card
             flat
             class="hero__section__card mx-auto d-flex flex-column align-center py-8 px-md-16 px-4"
+            data-aos="fade-up"
+            data-aos-duration="800"
           >
             <p class="hero__section__title secondary--text">Space 8 Media</p>
             <p class="hero__section__description white--text text-center">

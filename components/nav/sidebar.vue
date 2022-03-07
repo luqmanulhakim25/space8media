@@ -8,7 +8,7 @@
   >
     <vs-sidebar absolute open v-model="active_slug">
       <template #logo>
-        <v-img max-width="100" src="images/nav-logo-dark.png" class="mr-16" />
+        <v-img max-width="100" src="/images/nav-logo-dark.png" class="mr-16" />
       </template>
       <vs-sidebar-item
         :id="item.slug"
