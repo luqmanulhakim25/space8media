@@ -1,4 +1,4 @@
-require('dotenv').config()
+// require('dotenv').config()
 
 module.exports = {
   server: {
@@ -62,6 +62,7 @@ module.exports = {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/axios',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
